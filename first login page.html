@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url('image1.jpg');
+            background-size: cover;
+        }
+
+        .container {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(59, 236, 15, 0.288);
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding-top: 50px;
+            border-radius: 30px;
+            box-shadow: 6px 6px 6px rgb(1, 26, 1);
+        }
+
+        button {
+            background-color: rgb(111, 8, 236);
+            border-radius: 5px;
+            width: 100px;
+            height: 35px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input {
+            width: 200px;
+            height: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(55, 246, 253);
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 300;
+            color: rgb(36, 255, 255);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>WELCOME TO MUBUGA CURRENCY EXCHANGE COMPANY</h1> 
+
+    <div class="container">
+        <h1>LOG IN</h1>
+        <form onsubmit="return validateForm()" action="website.html">
+            <input type="text" id="name" placeholder="ENTER NAMES"><br><br>
+            <input type="email" id="email" placeholder="ENTER YOUR EMAIL"><br><br>
+            <input type="password" id="password" placeholder="PASSWORD"><br><br>
+            <button type="submit">LOG IN</button><br><br>
+            <a href="forgotpassword.html">Forgot password?</a><br><br>
+            <button type="button" onclick="window.location.href='website.html'">Back</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value.trim();
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            return true; // Proceed with form submission
+        }
+    </script>
+
+</body>
+</html>
